@@ -1,0 +1,63 @@
+#启动时不显示欢迎屏幕
+startup_message off
+#
+#term linux
+#http://unix.stackexchange.com/questions/26743/force-gnu-screen-to-reflow-to-current-terminal-width-on-reattach
+termcapinfo xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+##use ^l as the Global Key
+##escape ^b^b
+###屏幕缓冲区设置为4096行
+#defscrollback 4096
+#
+###在vi或less之类退出时完全恢复到原屏幕内容
+#xterm时需配合 .vimrc
+altscreen on
+#
+##自动detach
+#autodetach on
+#
+##编码
+#defutf8 on
+#defencoding utf8
+#encoding UTF-8 UTF-8
+#
+##设置屏幕下方状态栏
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rY}%n %t%{-}%+w %=%{..G} %c:%s "
+#hardstatus on
+#hardstatus alwayslastline
+#shelltitle "$|bash"
+###状态栏的显示信息定制
+#hardstatus string '%{= kG}[ %{G}%c:%s %{g}][%= %{=#kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][ %{C} #%{g}][%{kB} %d/%m %{w}%c %{g}]'
+#
+###shutdown the noise（关闭报警响铃）
+vbell off
+# 默认关闭日志,否则屏幕记录都会记下来，文件难于管理
+deflog off
+#
+#bind ' ' title
+### 绑定 Ctrl+a-w 为查看所有窗口列表w to show the window list
+bind w windowlist -b
+#bind ^w windowlist -b
+###initial apps to run
+#screen
+#screen
+#screen
+#screen
+#select 0
+#
+##进行快捷键的绑定
+##bindkey -k k1 screen
+##bindkey -k k2 title
+##bindkey -k k3 monitor
+##bindkey -k k4 silence
+##bindkey -k k5 colon
+##bindkey -k k6 split
+##bindkey -k k; focus
+##bindkey -k k7 focus
+##bindkey -k k8 only
+##bindkey -k k9 detach
+#bindkey -k F1 prev
+#bindkey -k F2 next
+#attrcolor u "-u B"
+#sessionname cm
